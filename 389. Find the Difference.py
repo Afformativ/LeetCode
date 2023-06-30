@@ -12,3 +12,7 @@ class Solution:
         for i in t:
             if s.count(i) != t.count(i):
                 return i
+#Third Solution
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        return list((Counter(t)-Counter(s)).elements())[0]

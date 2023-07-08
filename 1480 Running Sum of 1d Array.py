@@ -7,3 +7,10 @@ class Solution(object):
         for i in range(1,len(nums)):
             a.append(nums[i]+a[i-1])
         return a
+
+#Second Solution
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        for i in range(1,len(nums)):
+            nums[i]=nums[i]+nums[i-1]
+        return nums

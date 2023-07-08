@@ -15,3 +15,7 @@ class Solution:
         c1=Counter(nums1)
         c2=Counter(nums2)
         return c1 & c2
+#Third Solution
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        return list(set(nums1)&set(nums2))

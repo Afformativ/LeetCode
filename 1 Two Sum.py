@@ -14,3 +14,14 @@ class Solution(object):
                 d[(target-nums[i])]=i
             else:
                 return[i,d[nums[i]]]
+#Third Solution
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        res=[]
+        for i in range(len(nums)):
+            if (target-nums[i]) in nums[i+1:]:
+                res.append(i)
+                for j in range(i+1,len(nums)):
+                    if (target-nums[i])==nums[j]:
+                        res.append(j)
+                return res

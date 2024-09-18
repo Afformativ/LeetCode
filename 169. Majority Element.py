@@ -24,3 +24,19 @@ class Solution:
                 candidate=num
             count+=(1 if num==candidate else -1)
         return candidate
+#Forth solution
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        hash={}
+        nums=sorted(nums)
+        l,r=0,1
+        while r<len(nums):
+            if nums[r]==nums[l]:
+                r+=1
+            else:
+                hash[nums[l]]=r-l
+                l=r
+                r+=1
+        hash[nums[-1]]=r-l
+        return max(zip(hash.values(), hash.keys()))[1]
+        
